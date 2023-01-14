@@ -1,16 +1,16 @@
-
+from datetime import datetime
 from fpdf import FPDF
 
 
 
 def get_pdf(company):
-
+    today = datetime.now()
     new_pdf = FPDF()
     new_pdf.add_page()
     new_pdf.set_font('Helvetica', size = 12)
     new_pdf.set_margins(20.0, 20.0, 20.0)
     txt_1 = 'Maciej Jaroszewski' + '\r\n' + '511 826 318' + '\r\n' + 'mjaroszewski1979@gmail.com'
-    txt_2 = 'January 12, 2023'
+    txt_2 = today.strftime("%a,%d %b, %Y")
     txt_3 = company
     txt_4 = 'Dear Sirs,'
     txt_5 = 'This letter is to express my interest in the Software Developer position. I am excited about the opportunity to join your team and contribute my experiences to the company. In my previous roles, I learned how to handle multiple tasks efficiently, work well under pressure, and communicate effectively with both customers and colleagues. I also gained valuable problem-solving skills and the ability to learn new systems and technologies quickly. I have always been interested in computers and have taught myself the basics of programming. I am now eager to take my competence to the next level by learning from experienced professionals and working on real-world projects.'
