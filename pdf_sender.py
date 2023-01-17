@@ -3,7 +3,14 @@ from fpdf import FPDF
 from pdf_text import get_content, spaces
 
 
+'''
+This function is responsible for creating pdf file from seperate utility unit - pdf_text.
+It has hard coded settings like font family and size as well as margins parameters.
+It takes one argument - company name which is dynamically injected into pdf file.
+For displaying current date this function uses datetime module combined with string formatting.
+Finally it saves created pdf to output file located in working directory.
 
+'''
 def get_pdf(company):
     today = datetime.now()
     new_pdf = FPDF()

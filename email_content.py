@@ -1,3 +1,4 @@
+# This function returns dynamically created html to be used as an email message content.
 def get_content(cmp_name):
 
     content = f'''

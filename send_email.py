@@ -5,7 +5,13 @@ from pdf_sender import get_pdf
 from email_content import get_content
 
 import time
+'''
+This function is responsible for sending email utilizing gmail as smtp server.
+It generates email message dynamically injecting provided company name as a parameter as well as company email address.
+Ability to attach two different pdf files is achieved by iteration using simple -for loop-.
+This function is using -sleep- method from -time- library to ensure that get_pdf helper function finishes outputting created file.
 
+'''
 def send_email(company_name, company_email):
     get_pdf(company=company_name)
     time.sleep(5)
@@ -29,7 +35,6 @@ def send_email(company_name, company_email):
     pdf_files = ['Maciej_Jaroszewski_CL.pdf', 'Maciej_Jaroszewski_CV.pdf']
 
     for pdf_file in pdf_files:
-
 
         with open(pdf_file, 'rb') as pdf:
             msg.add_attachment(pdf.read(), maintype='application', subtype='octet-stream', filename=pdf.name)
